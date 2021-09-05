@@ -3,7 +3,6 @@
 <main>
 
   {{ $initial := "" }}
-  {{- with .Site.GetPage "książka" }}
   {{- range .Pages.ByTitle }}
   {{ $currentInitial := substr .Title 0 1 -}}
   {{- if ne $initial $currentInitial -}}
@@ -12,10 +11,9 @@
   {{ end }}
   <p>
   {{- $initial = $currentInitial -}}
-  <strong>{{ $initial }}</strong>
+  <strong>{{ $initial }}</strong>&nbsp;
   {{- end -}}
   | <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  {{- end }}
   {{- end }}
   </p>
 
