@@ -6,8 +6,10 @@
   {{ with .Params.images }}
   {{ range first 1 ($.Param "images") -}}
   "image": {{ .path | absURL }},
-  {{ end }}
-  {{ end }}
+  {{ end -}}
+  {{ else -}}
+  "image": {{ .Site.Params.logo | absURL }},
+  {{ end -}}
   "datePublished": {{ .PublishDate }},
   "dateModified": {{ .Lastmod }},
   "author": {
