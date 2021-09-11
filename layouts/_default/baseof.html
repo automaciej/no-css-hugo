@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html ⚡ lang="pl">
-    {{- partial "head.html" . -}}
+<html {{ block "ampsign" . }}{{ end -}} lang="{{ .Site.Language.Lang }}">
+    <head>
+    {{- partial "head.html" . }}
+    {{- block "amphead" . }}
+    {{- end }}
+    </head>
     <body>
         {{- partial "header.html" . -}}
         {{- block "main" . }}{{- end }}
