@@ -30,15 +30,10 @@
     "logo": {
       "@type": "ImageObject",
       "url": {{ .Site.Params.logo | absURL }}
-    }
+    },
+    "url": {{ .Site.BaseURL }}
   },
   "description": {{ .Summary | plainify | safeHTML }},
   "keywords": [{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}]
-}
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": {{ .Site.Params.organization }},
-  "url": {{ .Site.BaseURL }}
 }
 </script>
